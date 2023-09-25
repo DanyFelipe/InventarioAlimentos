@@ -1,0 +1,7 @@
+com\poo\inventarioalimentos\connections\Productor.class
+com\poo\inventarioalimentos\Transaccion.class
+com\poo\inventarioalimentos\connections\BaseDatosMySQL.class
+com\poo\inventarioalimentos\Compra.class
+com\poo\inventarioalimentos\connections\Consumidor.class
+com\poo\inventarioalimentos\InventarioAlimentos.class
+com\poo\inventarioalimentos\Venta.class
