@@ -3,28 +3,19 @@ package com.poo.inventarioalimentos;
 
 public class Venta {
     
-    private int id;
     private int idProducto;
     private int cantidad;
     private int idSucursal;
-    private double precioUnitario;
 
-    public Venta(int id, int idProducto, int cantidad, int idSucursal, double precioUnitario) {
-        this.id = id;
+    public Venta(int idProducto, int cantidad, int idSucursal) {
         this.idProducto = idProducto;
         this.cantidad = cantidad;
         this.idSucursal = idSucursal;
-        this.precioUnitario = precioUnitario;
     }
 
-    public int getId() {
-        return id;
+    public Venta() {
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+    
     public int getIdProducto() {
         return idProducto;
     }
@@ -49,20 +40,10 @@ public class Venta {
         this.idSucursal = idSucursal;
     }
 
-    public double getPrecioUnitario() {
-        return precioUnitario;
-    }
-
-    public void setPrecioUnitario(double precioUnitario) {
-        this.precioUnitario = precioUnitario;
-    }
-
-    
-    
     @Override
     public String toString() {
-        return "Venta [ID: " + getId() + ", Producto ID: " + getIdProducto() + ", Sucursal ID: " + getIdSucursal() +
-               ", Cantidad: " + getCantidad() + ", Precio Unitario: " + getPrecioUnitario() + "]";
+        return "Producto ID: " + getIdProducto() + ", Sucursal ID: " + getIdSucursal() +
+               ", Cantidad: " + getCantidad();
     }
     
 }

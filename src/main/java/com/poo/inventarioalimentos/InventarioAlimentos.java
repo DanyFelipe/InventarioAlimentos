@@ -18,7 +18,7 @@ public class InventarioAlimentos {
         Consumidor consumidor = new Consumidor();
         ObjectMapper objectMapper = new ObjectMapper();
         
-        String transaccion = null;
+        String ventaJSON = null, compraJSON = null;
 
         // Iniciar el consumidor en un hilo separado
         Thread consumidorThread = new Thread(new Runnable() {
@@ -30,18 +30,20 @@ public class InventarioAlimentos {
         consumidorThread.start();
 
         // Crear instancias de Compra y Venta
-        Compra info = new Compra("Nintendo Switch", "Consola de videojuegos japonesa", 300,8);
-        //Venta info = new Venta(2, 4,5 ,1, 40);
+        Compra compra = new Compra(717,"Nintendo Switch", "Consola de videojuegos japonesa", 300,234,8);
+        Venta venta = new Venta(255,7 ,245);
         
         try {
             // Serializa el objeto JSON a STRING
-            transaccion = objectMapper.writeValueAsString(info);
+            compraJSON = objectMapper.writeValueAsString(compra);
+            ventaJSON = objectMapper.writeValueAsString(venta);
         } catch (JsonProcessingException ex) {
             Logger.getLogger(InventarioAlimentos.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        // Enviar la instancia de la transaccion como una COMPRA o VENTA para que la registre el consumidor en la base de datos
-        productor.enviarTransaccion(transaccion);
+        // Enviar la instancia de la transaccion como una COMPRA y como una VENTA para que la registre el consumidor en la base de datos
+        productor.enviarTransaccion(compraJSON);
+        productor.enviarTransaccion(ventaJSON);
 
         // Esperar a que el usuario termine
         try {

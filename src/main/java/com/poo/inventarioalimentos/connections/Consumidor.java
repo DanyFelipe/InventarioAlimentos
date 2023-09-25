@@ -52,16 +52,13 @@ public class Consumidor {
     public void procesarMensaje(String contenido) {
 
         try {
-            System.out.println("Contenido: " + contenido);
             // Determina el tipo de transacción (Compra o Venta) a partir del contenido
             if (contenido.contains("nombre")) {
-                System.out.println("QUE SUCEDE!!");
                 Compra compra = objectMapper.readValue(contenido, Compra.class);
                 // Realiza acciones para procesar la compra en la base de datos
-                System.out.println("NOS VAMOS!!");
                 baseDatos.agregarProducto(compra);
 
-            } else if (contenido.contains("id")) {
+            } else if (contenido.contains("idProducto")) {
 
                 Venta venta = objectMapper.readValue(contenido, Venta.class);
                 // Realiza acciones para procesar la venta en la base de datos
