@@ -1,4 +1,5 @@
 com\poo\inventarioalimentos\connections\Productor.class
+com\poo\inventarioalimentos\InventarioAlimentos$1.class
 com\poo\inventarioalimentos\Transaccion.class
 com\poo\inventarioalimentos\connections\BaseDatosMySQL.class
 com\poo\inventarioalimentos\Compra.class

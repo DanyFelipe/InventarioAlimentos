@@ -6,34 +6,44 @@ package com.poo.inventarioalimentos;
 
 public class Compra {
     
-    private int id;
-    private int idProducto;
+    private String nombre;
+    private String descripcion;
+    private double precio;
     private int cantidad;
-    private int idSucursal;
-    private double precioUnitario;
 
-    public Compra(int id, int idProducto, int cantidad, int idSucursal, double precioUnitario) {
-        this.id = id;
-        this.idProducto = idProducto;
+    public Compra(String nombre, String descripcion, double precio, int cantidad) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
         this.cantidad = cantidad;
-        this.idSucursal = idSucursal;
-        this.precioUnitario = precioUnitario;
     }
 
-    public int getId() {
-        return id;
+    public Compra() {
+    }
+    
+
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public int getIdProducto() {
-        return idProducto;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setIdProducto(int idProducto) {
-        this.idProducto = idProducto;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
     public int getCantidad() {
@@ -44,25 +54,9 @@ public class Compra {
         this.cantidad = cantidad;
     }
 
-    public int getIdSucursal() {
-        return idSucursal;
-    }
-
-    public void setIdSucursal(int idSucursal) {
-        this.idSucursal = idSucursal;
-    }
-
-    public double getPrecioUnitario() {
-        return precioUnitario;
-    }
-
-    public void setPrecioUnitario(double precioUnitario) {
-        this.precioUnitario = precioUnitario;
-    }
-
     @Override
     public String toString() {
-        return "Compra [ID: " + getId() + ", Producto ID: " + getIdProducto() + ", Sucursal ID: " + getIdSucursal() +
-               ", Cantidad: " + getCantidad() + ", Precio Unitario: " + getPrecioUnitario() + "]";
+        return "Nombre: " + getNombre() + ", Descripcion: " + getDescripcion() + ",  Precio: " + getPrecio() +
+               ", Cantidad: " + getCantidad();
     }
 }

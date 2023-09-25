@@ -6,10 +6,8 @@ import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.MessageProducer;
-import javax.jms.Queue;
 import javax.jms.Session;
 import javax.jms.TextMessage;
-import static org.apache.activemq.console.command.DefaultPasswordFactory.factory;
 
 public class Productor {
 
